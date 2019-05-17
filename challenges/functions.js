@@ -11,7 +11,7 @@
 // Function firstItem(arr, callback) {
 //   callback(arr[3]);
 // }
-// Const Item(item, function (firstItem) {   
+// Const Item(item, function (firstItem) {     
 //   console.log(firstItem);
 // });
 
