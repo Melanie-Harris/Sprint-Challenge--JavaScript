@@ -11,7 +11,7 @@
 // Function firstItem(arr, callback) {
 //   callback(arr[3]);
 // }
-// Const Item(item, function (firstItem) {
+// Const Item(item, function (firstItem) {   
 //   console.log(firstItem);
 // });
 
@@ -20,30 +20,39 @@
   * Create a function named multiply that returns the product of two numbers 
   * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
 */
-const add = (num1, num2) => {
-  return num1 + num2;
+
+function consume(x, y, callback)
+   {
+     higherOrder=callback(x,y);
+     return higherOrder
+   }
+
+   function add(x,y){
+     return x + y;
+   }
+
+   function multiply(x,y){
+    return x * y;
 }
 
-const multiply = (num1, num2) => {
-  return num1 * num2;
-}
+  function greeting (first_name,last_name){
+    return `Hello ${first_name} ${last_name}, nice to meet you!`
+  }
 
-const greeting = (first_name, last_name) => {
- return `Hello ${first_name} ${last_name}, nice to meet you!`;
-}
 
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
- consume(2,2,add); // 4
- consume(10,16,multiply); // 160
- consume("Mary","Poppins", greeting); // Hello Mary Poppins, nice to meet you!
+ console.log(consume(2,2,add)); // 4
+ console.log(consume(10,16,multiply)); // 160
+ console.log(consume("Mary","Poppins", greeting)); // Hello Mary Poppins, nice to meet you!
 
 
 // ==== Closures ==== 
 
 // Explain in your own words why `nestedfunction()` can access the variable `internal`.
 
-// Explanation: 
-
+/* Explanation: nestedFunction() has access to the variable "internal" because it is within the same function scope. 
+                If you look within myFunction(), you'll see that the variable "internal" is being stored for used later, 
+                which is when the nestedfunction written next is invoking it.*/
 
 const external = "I'm outside the function";
 
@@ -57,3 +66,4 @@ function myFunction() {
   nestedFunction();
 }
 myFunction();
+   
